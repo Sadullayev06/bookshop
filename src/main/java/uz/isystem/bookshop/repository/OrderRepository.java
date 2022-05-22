@@ -1,4 +1,7 @@
 package uz.isystem.bookshop.repository;
 
-public interface OrderRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import uz.isystem.bookshop.model.Order;
+
+public interface OrderRepository extends JpaRepository<Order,Integer> {
 }
