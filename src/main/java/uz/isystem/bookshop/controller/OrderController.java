@@ -44,8 +44,8 @@ public class OrderController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
-        boolean result = orderService.delete(id);
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id,@RequestBody @Valid OrderDto orderDto){
+        boolean result = orderService.delete(id,orderDto);
         return ResponseEntity.ok(result);
     }
 }

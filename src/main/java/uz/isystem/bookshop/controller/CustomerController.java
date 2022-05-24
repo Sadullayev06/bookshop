@@ -35,8 +35,8 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
-        boolean result = customerService.delete(id);
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id,@RequestBody @Valid CustomerDto customerDto){
+        boolean result = customerService.delete(id,customerDto);
         return ResponseEntity.ok(result);
     }
 }
