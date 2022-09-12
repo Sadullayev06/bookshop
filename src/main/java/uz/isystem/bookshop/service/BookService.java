@@ -3,10 +3,8 @@ package uz.isystem.bookshop.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uz.isystem.bookshop.dto.BookDto;
-import uz.isystem.bookshop.dto.CustomerDto;
 import uz.isystem.bookshop.exception.BadRequest;
 import uz.isystem.bookshop.model.Book;
-import uz.isystem.bookshop.model.Customer;
 import uz.isystem.bookshop.repository.BookRepository;
 
 import java.time.LocalDateTime;
@@ -56,7 +54,7 @@ public class BookService {
     public Book check(Integer id) {
         Optional<Book> optional = bookRepository.findById(id);
         if (optional.isEmpty()){
-            throw new BadRequest("Doctor not found");//throw new BadRequest("Doctor not found");
+            throw new BadRequest("Doctor not found");
         }
         return optional.get();
     }
